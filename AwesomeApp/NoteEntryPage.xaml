@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AwesomeApp.NoteEntryPage"
+             Title="Detail Page">
+          
+    <StackLayout Margin="20" >
+        <Image Source="{Binding Image}"/>
+        <Label Text ="The Japanese beetle (Popillia japonica) is a species of scarab beetle. The adult measures 15 mm (0.6 in) in length and 10 mm (0.4 in) in width, has iridescent copper-colored elytra and a green thorax and head. It is not very destructive in Japan, where it is controlled by natural predators, but in North America, it is a noted pest of about 300 species of plants including rose bushes, grapes, hops, canna, crape myrtles, birch trees, linden trees, and others."/>
+
+        <Editor 
+            x:Name="editor"
+            Placeholder="Location Spotted - Name"
+                Text="{Binding Name}"
+                HeightRequest="50" 
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="EndAndExpand"
+                />
+       
+        
+        
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button Text="Save"
+                    Clicked="OnSaveButtonClicked" 
+                    BackgroundColor="ForestGreen"
+                    HeightRequest="50" />
+            <Button Grid.Column="1"
+                    Text="Delete"
+                    Clicked="OnDeleteButtonClicked"
+                     BackgroundColor="ForestGreen"
+                    HeightRequest="50" />
+            <Button Grid.Column="2"
+                    Text="Contact Pest Control"
+                    Font="11"
+                    Clicked="OnPestControlledClicked"
+                     BackgroundColor="ForestGreen"
+                    HeightRequest="50" />
+        </Grid>
+    </StackLayout>
+</ContentPage>
