@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:map="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             xmlns:maps="clr-namespace:Xamarin.Essentials;assembly=Xamarin.Essentials"
+             mc:Ignorable="d"
+             x:Class="AwesomeApp.PestControl"
+             Title="Pest Control Page">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Home" Clicked="OnNoteAddedClicked"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Maine Pest Control"
+                   TextColor="White"
+                   BackgroundColor="#120AFE"
+                   FontSize="20"
+                   HorizontalOptions="CenterAndExpand"
+                   />
+            <Label Text="Phone number:"
+                   BackgroundColor="ForestGreen"
+                   FontSize="20"/>
+            <Label Text="2075173818"
+                   FontSize="15"
+                   TextColor="#120AFE"/>
+            <Label Text="Address:"
+                   BackgroundColor="ForestGreen"
+                   FontSize="20"/>
+            <Label Text="61 Westwood Rd"
+                  FontSize="15"
+                    TextColor="#120AFE"/>
+            <Label Text="Gray,Me 04039"
+                   FontSize="15"
+                    TextColor="#120AFE"/>
+            <Label Text="Company Website:"
+                  BackgroundColor="ForestGreen" 
+                   FontSize="20"/>
+            <Label Text="www.pestcontrol.com"
+                  VerticalOptions="StartAndExpand" 
+                HorizontalOptions="StartAndExpand"
+                   FontSize="15"
+                    TextColor="#120AFE"/>
+            <Label Text="Navigate the Location"
+                 FontSize="20"
+                   BackgroundColor="ForestGreen" />
+            <map:Map>
+                <x:Arguments>
+                    <map:MapSpan>
+                        <x:Arguments>
+                            <map:Position>
+                                <x:Arguments>
+                                    <x:Double>36.9628066</x:Double>
+                                    <x:Double>-122.0194722</x:Double>
+                                </x:Arguments>
+                            </map:Position>
+                            <x:Double>0.01</x:Double>
+                            <x:Double>0.01</x:Double>
+                        </x:Arguments>
+                    </map:MapSpan>
+                </x:Arguments>
+            </map:Map>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

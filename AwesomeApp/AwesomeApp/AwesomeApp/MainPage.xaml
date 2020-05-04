@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="AwesomeApp.MainPage"
+             Title="Recently Spotted Bugs">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Home" Clicked="OnNoteAddedClicked"/>
+    </ContentPage.ToolbarItems>
+    <ListView x:Name="lstView" RowHeight="110" ItemSelected="OnListViewItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Fill" BackgroundColor="#11d42d" Padding="10" Margin="0,8,0,0">
+                            <Image Source="{Binding Image}"/>
+                            <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                                <Label Text="{Binding Name}" TextColor="White" FontSize="24" HorizontalTextAlignment="End" />
+                                <Label Text="{Binding spottedDate}" TextColor="White" HorizontalTextAlignment="End"/>
+                                <Label Text="{Binding Location}" TextColor="White" HorizontalTextAlignment="End"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage>
+
+    
+
