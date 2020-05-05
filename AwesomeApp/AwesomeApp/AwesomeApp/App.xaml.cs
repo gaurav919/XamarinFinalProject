@@ -14,9 +14,9 @@ namespace AwesomeApp
         {
             InitializeComponent();
             
-            MainPage = new NavigationPage(new HomePage());
+           MainPage = new NavigationPage(new Splash());
             FolderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData));
         }
-        // ...
+       
     }
 }

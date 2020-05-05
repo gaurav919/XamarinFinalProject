@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\aryal\\source\\repos\\AwesomeApp\\AwesomeApp\\AwesomeApp\\AwesomeApp.csproj": {}
+    "A:\\XamarinFinalProject\\AwesomeApp\\AwesomeApp\\AwesomeApp\\AwesomeApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\aryal\\source\\repos\\AwesomeApp\\AwesomeApp\\AwesomeApp\\AwesomeApp.csproj": {
+    "A:\\XamarinFinalProject\\AwesomeApp\\AwesomeApp\\AwesomeApp\\AwesomeApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\aryal\\source\\repos\\AwesomeApp\\AwesomeApp\\AwesomeApp\\AwesomeApp.csproj",
+        "projectUniqueName": "A:\\XamarinFinalProject\\AwesomeApp\\AwesomeApp\\AwesomeApp\\AwesomeApp.csproj",
         "projectName": "AwesomeApp",
-        "projectPath": "C:\\Users\\aryal\\source\\repos\\AwesomeApp\\AwesomeApp\\AwesomeApp\\AwesomeApp.csproj",
+        "projectPath": "A:\\XamarinFinalProject\\AwesomeApp\\AwesomeApp\\AwesomeApp\\AwesomeApp.csproj",
         "packagesPath": "C:\\Users\\aryal\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\aryal\\source\\repos\\AwesomeApp\\AwesomeApp\\AwesomeApp\\obj\\",
+        "outputPath": "A:\\XamarinFinalProject\\AwesomeApp\\AwesomeApp\\AwesomeApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"

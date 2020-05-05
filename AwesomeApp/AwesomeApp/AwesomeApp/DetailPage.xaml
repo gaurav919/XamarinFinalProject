@@ -5,13 +5,16 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="AwesomeApp.DetailPage">
-    <ContentPage.Content>
-        <ScrollView>
-            <StackLayout>
-
-                <Image Source="{Binding Image}" WidthRequest="400" HeightRequest="400" Margin="10,8,10,10" >
+    <ContentPage.Content >
+        <ScrollView BackgroundColor ="Wheat">
+            <StackLayout Padding="10,10,10,10">
+                <Frame  CornerRadius="20"
+                            Padding="0" 
+                        >
+                    <Image Source="{Binding Image}" WidthRequest="100" HeightRequest="249" >
 
                 </Image>
+                </Frame>
 
                 <Label x:Name="insectMatch" Text="{Binding insectMatch}" FontSize="Large" VerticalOptions="Center" HorizontalOptions="Center" TextColor="#120AFE">
 
@@ -20,7 +23,7 @@
                 <Label x:Name="isPest" Text="{Binding isPest}" FontSize="Large" VerticalOptions="Center" HorizontalOptions="Center" TextColor="#120AFE">
 
                 </Label>
-                <Button x:Name="moreInfoBtn" Text="More Info" Clicked="moreInfoBtn_Clicked" BackgroundColor="#11D42D" TextColor="#120AFE">
+                <Button x:Name="moreInfoBtn" Text="More Info" Clicked="moreInfoBtn_Clicked" BackgroundColor="#11D42D" TextColor="White">
 
                 </Button>
             </StackLayout>

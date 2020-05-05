@@ -18,8 +18,7 @@ namespace AwesomeApp
         public PestControl()
         {
             InitializeComponent();
-           
-
+       
         }
         async void OnNoteAddedClicked(object sender, EventArgs e)
         {

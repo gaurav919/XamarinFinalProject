@@ -19,29 +19,21 @@ namespace AwesomeApp
         async void OnSaveButtonClicked(object sender, EventArgs e)
         {
             var note = (BugListViewModel)BindingContext;
-            var notes = new List<BugListViewModel>();
-
             var filename = Path.Combine(App.FolderPath, $"{Path.GetRandomFileName()}.notes.txt");
-                
-
             File.WriteAllText(filename, note.Name);
-
-            var contact = new BugListViewModel
+            if (!string.IsNullOrWhiteSpace(note.Filename))
             {
-                Image = "https://i.imgur.com/wrGW7Dz.jpg"
-
-            };
-            var secondPage = new MainPage();
-            secondPage.BindingContext = contact;
+                File.WriteAllText(filename, note.Name);
+            }
 
 
-            await Navigation.PushAsync(new MainPage());
+                await Navigation.PushAsync(new MainPage());
         }
 
        
         async void OnDeleteButtonClicked(object sender, EventArgs e)
         {
-
+           
             var note = (BugListViewModel)BindingContext;
 
             if (File.Exists(note.Filename))

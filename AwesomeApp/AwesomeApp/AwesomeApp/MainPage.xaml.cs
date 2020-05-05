@@ -17,28 +17,31 @@ namespace AwesomeApp
     public partial class MainPage : ContentPage
     {
         // public static string FolderPath { get; private set; }
-        public ObservableCollection<AwesomeApp.ViewModel.BugListViewModel> spottedBugs { get; set; }
+        public ObservableCollection<AwesomeApp.ViewModel.BugListViewModel> notes { get; set; }
         public MainPage()
         {
             InitializeComponent();
 
 
-            spottedBugs = new ObservableCollection<ViewModel.BugListViewModel>();
-            spottedBugs.Add(new ViewModel.BugListViewModel { Name = "Paper Wasp", Location = "front porch", Image = "paperwasp.jpg" });
-            spottedBugs.Add(new ViewModel.BugListViewModel { Name = "Deer Tick", Location = "back yard", Image = "deertick.jpg" });
-            spottedBugs.Add(new ViewModel.BugListViewModel { Name = "Pavement Ant", Location = "driveway", Image = "pavementant.jpg" });
-            spottedBugs.Add(new ViewModel.BugListViewModel { Name = "Wolf Spider", Location = "LIVING ROOM!!", Image = "wolfspider.jpg" });
-            spottedBugs.Add(new ViewModel.BugListViewModel { Name = "Yellow Jacket", Location = "garage", Image = "yellowjacket.jpg" });
-            spottedBugs.Add(new ViewModel.BugListViewModel { Name = "Japanese Beetle", Location = "walking trail", Image = "japbeetles.jpg" });
-            spottedBugs.Add(new ViewModel.BugListViewModel { Name = "Fisher Spider", Location = "walking trail pond", Image = "fishspider.jpg" });
-            lstView.ItemsSource = spottedBugs;
+            notes = new ObservableCollection<ViewModel.BugListViewModel>();
+            
+            //lstView.ItemsSource = spottedBugs;
         }
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            var notes = new List<BugListViewModel>();
+            //var notes = new List<BugListViewModel>();
+            notes.Add(new ViewModel.BugListViewModel { Name = "Paper Wasp", Location = "front porch", Image = "paperwasp.jpg" });
+            notes.Add(new ViewModel.BugListViewModel { Name = "Deer Tick", Location = "back yard", Image = "deertick.jpg" });
+            notes.Add(new ViewModel.BugListViewModel { Name = "Pavement Ant", Location = "driveway", Image = "pavementant.jpg" });
+            notes.Add(new ViewModel.BugListViewModel { Name = "Wolf Spider", Location = "LIVING ROOM!!", Image = "wolfspider.jpg" });
+            notes.Add(new ViewModel.BugListViewModel { Name = "Yellow Jacket", Location = "garage", Image = "yellowjacket.jpg" });
+            notes.Add(new ViewModel.BugListViewModel { Name = "Japanese Beetle", Location = "walking trail", Image = "japbeetles.jpg" });
+            notes.Add(new ViewModel.BugListViewModel { Name = "Fisher Spider", Location = "walking trail pond", Image = "fishspider.jpg" });
             var files = Directory.EnumerateFiles(App.FolderPath, "*.notes.txt");
-            var files1 = Directory.EnumerateFiles(App.FolderPath, "*.notes1.txt");
+           
+           
+                    
             foreach (var filename in files)
             {
                 notes.Add(new BugListViewModel
@@ -46,8 +49,8 @@ namespace AwesomeApp
                     Filename = filename,
                     Name = File.ReadAllText(filename),
                     spottedDate = File.GetCreationTime(filename),
-                    Image = "https://i.imgur.com/wrGW7Dz.jpg"
-
+                    Image = "https://i.imgur.com/wrGW7Dz.jpg",
+                  
                 });
             }
             
@@ -68,10 +71,8 @@ namespace AwesomeApp
         }
         async void OnNoteAddedClicked(object sender, EventArgs e)
         {
+            
             await Navigation.PopToRootAsync();
         }
     }
-
-    
-
 }

@@ -6,14 +6,17 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Android;
 
 namespace AwesomeApp.Droid
 {
     [Activity(Label = "AwesomeApp", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
+
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 
@@ -29,6 +32,29 @@ namespace AwesomeApp.Droid
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
-        
+        const int RequestLocationId = 0;
+
+        readonly string[] LocationPermissions =
+        {
+        Manifest.Permission.AccessCoarseLocation,
+        Manifest.Permission.AccessFineLocation
+};
+        protected override void OnStart()
+        {
+            base.OnStart();
+
+            if ((int)Build.VERSION.SdkInt >= 23)
+            {
+                if (CheckSelfPermission(Manifest.Permission.AccessFineLocation) != Permission.Granted)
+                {
+                    RequestPermissions(LocationPermissions, RequestLocationId);
+                }
+                else
+                {
+                    // Permissions already granted - display a message.
+                }
+            }
+        }
+
     }
 }
